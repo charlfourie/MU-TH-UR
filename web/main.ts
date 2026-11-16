@@ -1,4 +1,5 @@
 import './style.css';
+import { countActivityEntries } from './scorecard.mjs';
 
 interface Project {
   id: string;
@@ -87,6 +88,43 @@ function renderProject(project: Project): HTMLElement {
   return card;
 }
 
+function renderScorecard(projects: Project[]): HTMLElement {
+  const counts = countActivityEntries(projects);
+  const maxCount = Math.max(1, counts[0].count);
+  const section = element('section', 'scorecard');
+  section.setAttribute('aria-labelledby', 'scorecard-title');
+
+  const heading = element('div', 'scorecard-heading');
+  const title = element('h2', '', 'Recorded contributions');
+  title.id = 'scorecard-title';
+  heading.append(
+    element('div', 'scorecard-eyebrow', 'CREW SCORECARD'),
+    title,
+    element('p', '', 'Activity entries across published projects; self-reported, not a source-control diff.'),
+  );
+  section.append(heading);
+
+  const list = element('ol', 'scorecard-list');
+  for (const item of counts) {
+    const row = element('li', `scorecard-item${item.rank === 1 && item.count > 0 ? ' leading' : ''}`);
+    const identity = element('div', 'scorecard-identity');
+    identity.append(
+      element('span', 'scorecard-rank', String(item.rank).padStart(2, '0')),
+      element('h3', '', item.actor),
+    );
+    const total = element('strong', 'scorecard-count', String(item.count));
+    total.setAttribute('aria-label', `${item.count} activity ${item.count === 1 ? 'entry' : 'entries'}`);
+    const progress = document.createElement('progress');
+    progress.max = maxCount;
+    progress.value = item.count;
+    progress.setAttribute('aria-label', `${item.actor}: ${item.count} activity ${item.count === 1 ? 'entry' : 'entries'}`);
+    row.append(identity, total, progress);
+    list.append(row);
+  }
+  section.append(list);
+  return section;
+}
+
 async function load(): Promise<void> {
   const meResponse = await fetch('/api/me', { credentials: 'same-origin', cache: 'no-store' });
   if (!meResponse.ok) throw new Error(`Could not check sign-in status (HTTP ${meResponse.status})`);
@@ -148,6 +186,7 @@ async function loadProjects(): Promise<void> {
       showMessage('Nothing published yet', 'From a repository with a .muthur/ handoff, run muthur publish to send its latest snapshot here.');
       return;
     }
+    app.append(renderScorecard(data.projects));
     const grid = element('div', 'project-grid');
     data.projects.forEach((project) => grid.append(renderProject(project)));
     app.append(grid);

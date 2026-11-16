@@ -69,7 +69,7 @@ node -e "console.log(require('node:crypto').randomBytes(32).toString('base64url'
 
 For a one-off publish, the URL can instead be passed with `muthur publish --url https://YOUR-VERCEL-DOMAIN`. The token is read only from `MUTHUR_PUBLISH_TOKEN` rather than a command-line argument, so it is less likely to end up in shell history or process listings. Use a secret manager or protected environment when available; do not commit secrets or put them in `.muthur/`.
 
-The dashboard lists the latest snapshot per repository, its current status, summary, next steps, and recent activity. Repository identity is a SHA-256 hash of the Git `origin` URL, so separate clones of the same remote update one dashboard entry. If a repository has no origin, its local path is hashed instead and publishes from other machines will appear as separate projects. Repository URLs are stored only in the private snapshot; embedded URL credentials are removed before publishing.
+The dashboard lists the latest snapshot per repository, its current status, summary, next steps, and recent activity. Its crew scorecard ranks `human`, `copilot`, and `claude` by attributed activity-log entries across published projects; each actor-stamped entry counts once, so it measures recorded handoff activity, not source-control changes. Repository identity is a SHA-256 hash of the Git `origin` URL, so separate clones of the same remote update one dashboard entry. If a repository has no origin, its local path is hashed instead and publishes from other machines will appear as separate projects. Repository URLs are stored only in the private snapshot; embedded URL credentials are removed before publishing.
 
 ## Repository file structure
 

@@ -79,3 +79,24 @@ Initialized project handoff.
 ## 2026-11-16T09:41:01.245Z — copilot
 
 - Updated the copyable assistant handoff protocol to require reading the public Crew Guidelines across repositories and assistants.
+
+## 2026-11-16T09:43:17.517Z — copilot
+
+- Status: active → active
+- Updated current state summary.
+- Cleared next steps.
+- Next: Review the shared Crew Guidelines with Claude on Saturday.
+
+## 2026-11-16T09:43:17.635Z — copilot
+
+- Pushed b7f0ff3 to main; verified https://mu-th-ur.vercel.app/guidelines.html serves HTTP 200 and contains the Crew Guidelines. Production rollout confirmed.
+
+## 2026-11-16T09:50:46.630Z — copilot
+
+- Status: active → active
+- Updated current state summary.
+- Next: Deploy and verify the private dashboard scorecard.
+
+## 2026-11-16T09:50:46.767Z — copilot
+
+- Added the activity-log scorecard and documented its limits: it counts one actor-stamped log entry, not source-control changes. All 16 tests and typecheck pass; browser check with mocked project snapshots rendered Copilot 2, Claude 1, Human 0.
