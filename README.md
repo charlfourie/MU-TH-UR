@@ -4,7 +4,7 @@ A local-first project handoff CLI and private Vercel dashboard for developers an
 
 **Private dashboard:** [mu-th-ur.vercel.app](https://mu-th-ur.vercel.app) (GitHub sign-in required) · **Source:** [GitHub](https://github.com/charlfourie/MU-TH-UR)
 
-Escapement is the first connected project. Its handoff is stored in [`escapement/.muthur/`](https://github.com/charlfourie/escapement/tree/main/.muthur) and its latest published status appears in the private dashboard.
+MU/TH/UR tracks its own development in `.muthur/`, alongside the projects it coordinates. Escapement is the first external project connected; its handoff is stored in [`escapement/.muthur/`](https://github.com/charlfourie/escapement/tree/main/.muthur) and its latest published status appears in the private dashboard.
 
 ## Stack
 
