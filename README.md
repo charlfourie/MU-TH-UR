@@ -36,6 +36,10 @@ muthur publish
 
 Every write requires `--actor copilot`, `--actor claude`, or `--actor human`. Attribution records the declared actor; it does not attempt to verify which program or person invoked the command.
 
+## Assistant handoff protocol
+
+For a copyable instruction that tells assistants when to read and update handoffs, how to attribute work, and when not to publish, see [the assistant handoff protocol](docs/assistant-handoff.md). It is opt-in: copy it into a repository's assistant instructions if you want to use it there.
+
 ## Private Vercel dashboard
 
 The local `.muthur/` files remain the source of truth. Publishing is explicit: after changing a project's state or activity, run `muthur publish` to update its private dashboard snapshot. Set these environment variables on the Vercel project:

@@ -23,3 +23,14 @@ Initialized project handoff.
 ## 2026-11-16T08:48:45.075Z — copilot
 
 - Added a static public demo with fictional project data; removed direct links to the private dashboard from charl.space and public READMEs.
+
+## 2026-11-16T09:29:50.582Z — copilot
+
+- Status: active → active
+- Updated current state summary.
+- Cleared next steps.
+- Next: Try the protocol with Claude and refine it based on actual use.
+
+## 2026-11-16T09:29:50.705Z — copilot
+
+- Added docs/assistant-handoff.md and linked it from the README; clarified that update already records state changes and log is optional detail. Explicitly prohibit credentials in handoffs and publishing without user request.
