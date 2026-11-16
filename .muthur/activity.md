@@ -34,3 +34,12 @@ Initialized project handoff.
 ## 2026-11-16T09:29:50.705Z — copilot
 
 - Added docs/assistant-handoff.md and linked it from the README; clarified that update already records state changes and log is optional detail. Explicitly prohibit credentials in handoffs and publishing without user request.
+
+## 2026-11-16T09:31:50.250Z — copilot
+
+- Status: active → active
+- Updated current state summary.
+
+## 2026-11-16T09:31:50.374Z — copilot
+
+- Updated the MU/TH/UR handoff after committing and pushing the assistant handoff protocol as a14b5ca.
