@@ -3,25 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#111714" />
+    <meta name="theme-color" content="#080c09" />
     <meta name="description" content="Private project handoffs and activity across your coding assistants." />
     <title>MU/TH/UR — Project overview</title>
   </head>
   <body>
     <main id="app">
       <header class="topbar">
-        <a class="wordmark" href="/" aria-label="MU/TH/UR home"><span class="mark">M</span><span>MU/TH/UR</span></a>
+        <a class="wordmark" href="/" aria-label="MU/TH/UR home">
+          <span class="mark" aria-hidden="true">M</span>
+          <span class="wordmark-copy"><strong>MU/TH/UR</strong><small>PROJECT COORDINATION SYSTEM</small></span>
+        </a>
+        <div class="system-readout"><span class="online-lamp" aria-hidden="true"></span><span>PRIVATE NODE</span><span class="readout-divider">/</span><span>MANUAL UPLINK</span></div>
         <div id="account"></div>
       </header>
       <section class="intro">
-        <p class="eyebrow">PERSONAL PROJECT COORDINATION</p>
-        <h1>Keep the thread.</h1>
-        <p class="lede">A private overview of what you and your coding assistants are working on, what changed, and what comes next.</p>
+        <div class="intro-copy">
+          <p class="eyebrow"><span>SYS. 01</span> / PROJECT REGISTRY</p>
+          <h1>Project status</h1>
+          <p class="lede">Work in progress, recorded across your repositories and assistant sessions.</p>
+        </div>
+        <div class="intro-readout" aria-label="System details">
+          <div><span>ACCESS</span><b>OWNER ONLY</b></div>
+          <div><span>RECORD</span><b>LOCAL FIRST</b></div>
+          <div><span>TRANSFER</span><b>ON DEMAND</b></div>
+        </div>
       </section>
-      <section id="content" aria-live="polite">
-        <div class="loading"><span class="pulse"></span> Checking your workspace…</div>
+      <section class="console">
+        <div class="console-bar"><span><i class="bar-mark" aria-hidden="true"></i> PUBLISHED WORKSPACE</span><span>HANDOFF MONITOR <b class="caret" aria-hidden="true"></b></span></div>
+        <div id="content" aria-live="polite">
+          <div class="loading"><span class="pulse"></span> Checking your workspace…</div>
+        </div>
       </section>
-      <footer>Local Markdown stays the source of truth. This dashboard shows the latest published snapshots.</footer>
+      <footer><span>MU/TH/UR // PORTABLE PROJECT RECORD</span><span>LOCAL FILES REMAIN AUTHORITATIVE</span></footer>
     </main>
     <script type="module" src="/main.ts"></script>
   </body>
