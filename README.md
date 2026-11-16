@@ -1,4 +1,4 @@
-# MU/TH/UR
+# [MU/TH/UR](https://mu-th-ur.vercel.app)
 
 A local-first project handoff CLI and private Vercel dashboard for developers and coding assistants. Each repository keeps its own Markdown state and activity log; `muthur publish` sends a snapshot to a private Vercel Blob store so you can view an overview across projects.
 
