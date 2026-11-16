@@ -1,10 +1,12 @@
-# [MU/TH/UR](https://mu-th-ur.vercel.app)
+# [MU/TH/UR](https://mu-th-ur.vercel.app/demo.html)
 
 A local-first project handoff CLI and private Vercel dashboard for developers and coding assistants. Each repository keeps its own Markdown state and activity log; `muthur publish` sends a snapshot to a private Vercel Blob store so you can view an overview across projects.
 
-**Private dashboard:** [mu-th-ur.vercel.app](https://mu-th-ur.vercel.app) (GitHub sign-in required) · **Source:** [GitHub](https://github.com/charlfourie/MU-TH-UR)
+**Public demo:** [mu-th-ur.vercel.app/demo.html](https://mu-th-ur.vercel.app/demo.html) (fictional sample data; no private project information) · **Source:** [GitHub](https://github.com/charlfourie/MU-TH-UR)
 
-MU/TH/UR tracks its own development in `.muthur/`, alongside the projects it coordinates. Escapement is the first external project connected; its handoff is stored in [`escapement/.muthur/`](https://github.com/charlfourie/escapement/tree/main/.muthur) and its latest published status appears in the private dashboard.
+The owner-only dashboard requires GitHub sign-in. Its URL is intentionally not linked from public pages. MU/TH/UR tracks its own development in `.muthur/`, alongside the projects it coordinates. Escapement is the first external project connected; its handoff is stored in [`escapement/.muthur/`](https://github.com/charlfourie/escapement/tree/main/.muthur) and its latest published status appears in the private dashboard.
+
+The public demo is a separate, static page with fictional projects and activity. It makes no API requests and does not read or expose private dashboard data.
 
 ## Stack
 
@@ -59,7 +61,7 @@ node -e "console.log(require('node:crypto').randomBytes(32).toString('base64url'
 2. In Vercel Storage, create and connect a Blob store. Vercel adds `BLOB_STORE_ID`; the Blob SDK authenticates from Vercel OIDC in hosted functions. If using a manually configured token instead, keep `BLOB_READ_WRITE_TOKEN` private.
 3. Create a GitHub OAuth App. Set its callback URL to `https://YOUR-VERCEL-DOMAIN/api/auth/callback`. The dashboard needs only the GitHub identity; it requests no repository scopes.
 4. Add the environment variables above to the Vercel project and redeploy. The dashboard allows only the exact account in `OWNER_GITHUB`.
-5. On each machine, set `MUTHUR_URL` to `https://mu-th-ur.vercel.app` and provide `MUTHUR_PUBLISH_TOKEN` from a secret manager or protected shell environment. It must match the token configured on Vercel. Then run `muthur publish` from an initialized repository.
+5. On each machine, set `MUTHUR_URL` to the private dashboard's deployed origin and provide `MUTHUR_PUBLISH_TOKEN` from a secret manager or protected shell environment. It must match the token configured on Vercel. Then run `muthur publish` from an initialized repository.
 
 For a one-off publish, the URL can instead be passed with `muthur publish --url https://YOUR-VERCEL-DOMAIN`. The token is read only from `MUTHUR_PUBLISH_TOKEN` rather than a command-line argument, so it is less likely to end up in shell history or process listings. Use a secret manager or protected environment when available; do not commit secrets or put them in `.muthur/`.
 
