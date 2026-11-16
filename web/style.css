@@ -1,6 +1,6 @@
 :root {
   color-scheme: dark;
-  font-family: Consolas, 'Lucida Console', monospace;
+  font-family: 'Segoe UI', Arial, sans-serif;
   color: #b6c8b7;
   background: #080c09;
   font-synthesis: none;
@@ -58,13 +58,13 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 1px soli
   font-size: 15px;
 }
 .wordmark-copy { display: grid; gap: 4px; }
-.wordmark-copy strong { color: var(--phosphor-bright); font-size: 14px; letter-spacing: .16em; font-weight: 500; }
-.wordmark-copy small { color: var(--muted); font-size: 8px; letter-spacing: .12em; }
-.system-readout { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 9px; letter-spacing: .07em; white-space: nowrap; }
+.wordmark-copy strong { color: var(--phosphor-bright); font: 500 14px 'Century Gothic', 'Segoe UI', Arial, sans-serif; letter-spacing: .16em; }
+.wordmark-copy small { color: var(--muted); font: 8px Consolas, 'Lucida Console', monospace; letter-spacing: .12em; }
+.system-readout { display: flex; align-items: center; gap: 9px; color: var(--muted); font: 9px Consolas, 'Lucida Console', monospace; letter-spacing: .07em; white-space: nowrap; }
 .online-lamp { width: 7px; height: 7px; border-radius: 50%; background: var(--phosphor); box-shadow: 0 0 7px #b1db8c88; }
 .readout-divider { color: var(--faint); }
 #account { justify-self: end; display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: 10px; }
-.account-name { font-size: 10px; }
+.account-name { font: 10px Consolas, 'Lucida Console', monospace; }
 .text-button {
   color: var(--phosphor);
   background: transparent;
@@ -72,7 +72,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 1px soli
   border-bottom: 1px solid #55664e;
   cursor: pointer;
   padding: 5px 0;
-  font-size: 10px;
+  font: 10px Consolas, 'Lucida Console', monospace;
   text-transform: uppercase;
 }
 .text-button:hover, .repo-link:hover { color: var(--phosphor-bright); }
@@ -86,8 +86,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 1px soli
   background: var(--phosphor);
   border: 1px solid #d3efaa;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 10px;
+  font: 700 10px Consolas, 'Lucida Console', monospace;
   letter-spacing: .07em;
   text-transform: uppercase;
   box-shadow: 0 0 12px #9dbd6722;
@@ -101,12 +100,28 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 1px soli
   padding: 45px 0 26px;
   border-bottom: 1px solid var(--line);
 }
-.eyebrow, .next-steps h3 { margin: 0 0 11px; color: var(--phosphor); font-size: 9px; letter-spacing: .13em; }
+.eyebrow, .next-steps h3 { margin: 0 0 11px; color: var(--phosphor); font: 9px Consolas, 'Lucida Console', monospace; letter-spacing: .13em; }
 .eyebrow span { color: var(--amber); }
-h1 { margin: 0; color: var(--phosphor-bright); font-size: clamp(27px, 4vw, 39px); line-height: 1.15; font-weight: 500; letter-spacing: .015em; text-transform: uppercase; text-shadow: 0 0 18px #b1db8c22; }
+h1 { margin: 0; color: var(--phosphor-bright); font-size: clamp(27px, 4vw, 39px); line-height: 1.15; font-weight: 500; }
+.title-sequence { display: flex; flex-wrap: wrap; gap: 0 .58em; color: #c1d9a5; font: 900 clamp(22px, 3.8vw, 37px)/1.15 'Century Gothic', 'Segoe UI', Arial, sans-serif; letter-spacing: .105em; text-shadow: 0 0 18px #b1db8c20; }
+.title-word { display: inline-flex; white-space: nowrap; }
+.title-letter { display: inline-block; animation: letter-arrival 480ms cubic-bezier(.2, .75, .25, 1) both; }
+.title-word:first-child .title-letter:nth-child(1) { animation-delay: 80ms; }
+.title-word:first-child .title-letter:nth-child(2) { animation-delay: 145ms; }
+.title-word:first-child .title-letter:nth-child(3) { animation-delay: 210ms; }
+.title-word:first-child .title-letter:nth-child(4) { animation-delay: 275ms; }
+.title-word:first-child .title-letter:nth-child(5) { animation-delay: 340ms; }
+.title-word:first-child .title-letter:nth-child(6) { animation-delay: 405ms; }
+.title-word:first-child .title-letter:nth-child(7) { animation-delay: 470ms; }
+.title-word:last-child .title-letter:nth-child(1) { animation-delay: 535ms; }
+.title-word:last-child .title-letter:nth-child(2) { animation-delay: 600ms; }
+.title-word:last-child .title-letter:nth-child(3) { animation-delay: 665ms; }
+.title-word:last-child .title-letter:nth-child(4) { animation-delay: 730ms; }
+.title-word:last-child .title-letter:nth-child(5) { animation-delay: 795ms; }
+.title-word:last-child .title-letter:nth-child(6) { animation-delay: 860ms; }
 .lede { max-width: 590px; margin: 11px 0 0; color: #91a18f; font-size: 12px; line-height: 1.7; }
 .intro-readout { min-width: 250px; padding: 8px 0 2px 18px; border-left: 1px solid var(--line); }
-.intro-readout div { display: flex; justify-content: space-between; gap: 18px; padding: 4px 0; font-size: 9px; }
+.intro-readout div { display: flex; justify-content: space-between; gap: 18px; padding: 4px 0; font: 9px Consolas, 'Lucida Console', monospace; }
 .intro-readout span { color: var(--muted); }
 .intro-readout b { color: #a9bc9e; font-weight: 400; letter-spacing: .07em; }
 .console { margin-top: 21px; border: 1px solid #52614e; background: #090e0a; box-shadow: 0 0 0 3px #0008, 0 12px 40px #0006; }
@@ -120,7 +135,7 @@ h1 { margin: 0; color: var(--phosphor-bright); font-size: clamp(27px, 4vw, 39px)
   color: #98ae8f;
   background: linear-gradient(90deg, #1a2518, #101710 70%, #151d13);
   border-bottom: 1px solid #52614e;
-  font-size: 9px;
+  font: 9px Consolas, 'Lucida Console', monospace;
   letter-spacing: .1em;
 }
 .console-bar > span { display: flex; align-items: center; gap: 9px; }
@@ -129,13 +144,13 @@ h1 { margin: 0; color: var(--phosphor-bright); font-size: clamp(27px, 4vw, 39px)
 .bar-mark { width: 6px; height: 6px; background: var(--phosphor); box-shadow: 0 0 6px #b1db8c88; }
 .caret { width: 6px; height: 12px; display: inline-block; background: var(--phosphor); animation: cursor 1.1s steps(2, start) infinite; }
 #content { min-height: 174px; padding: 17px; }
-.section-heading { color: var(--muted); font-size: 9px; letter-spacing: .08em; margin: 0 0 10px; text-transform: uppercase; }
+.section-heading { color: var(--muted); font: 9px Consolas, 'Lucida Console', monospace; letter-spacing: .08em; margin: 0 0 10px; text-transform: uppercase; }
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 11px; }
 .project-card { min-width: 0; padding: 0 15px 13px; background: linear-gradient(130deg, #111a11, #0d130e); border: 1px solid #3c4b39; box-shadow: inset 0 0 22px #9fbd6310; }
 .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin: 0 -15px; padding: 12px 15px 10px; background: #121b12; border-bottom: 1px solid #354334; }
-.project-heading h2 { margin: 0; color: var(--phosphor-bright); font-size: 15px; font-weight: 500; letter-spacing: .025em; overflow-wrap: anywhere; }
-.repo-name { margin: 5px 0 0; color: var(--muted); font-size: 9px; overflow-wrap: anywhere; }
-.status-badge { min-width: 77px; padding: 5px 7px; text-align: center; border: 1px solid #66715a; color: #b1c59e; font-size: 8px; letter-spacing: .08em; text-transform: uppercase; }
+.project-heading h2 { margin: 0; color: var(--phosphor-bright); font: 500 15px 'Century Gothic', 'Segoe UI', Arial, sans-serif; letter-spacing: .025em; overflow-wrap: anywhere; }
+.repo-name { margin: 5px 0 0; color: var(--muted); font: 9px Consolas, 'Lucida Console', monospace; overflow-wrap: anywhere; }
+.status-badge { min-width: 77px; padding: 5px 7px; text-align: center; border: 1px solid #66715a; color: #b1c59e; font: 8px Consolas, 'Lucida Console', monospace; letter-spacing: .08em; text-transform: uppercase; }
 .status-badge.active { color: var(--phosphor-bright); border-color: #839c6e; box-shadow: inset 0 0 8px #b1db8c17; }
 .status-badge.blocked { color: #e6b974; border-color: #977044; }
 .status-badge.paused { color: #aeb8a9; border-color: #626b5d; }
@@ -145,24 +160,28 @@ h1 { margin: 0; color: var(--phosphor-bright); font-size: clamp(27px, 4vw, 39px)
 .next-steps h3 { margin-bottom: 7px; color: var(--amber); font-size: 8px; }
 .next-steps ul { margin: 0; padding-left: 17px; color: #aab9a3; line-height: 1.7; font-size: 10px; }
 .activity { padding-top: 9px; border-top: 1px dashed #3a4938; }
-.activity summary { color: var(--phosphor); cursor: pointer; font-size: 9px; letter-spacing: .05em; text-transform: uppercase; }
+.activity summary { color: var(--phosphor); cursor: pointer; font: 9px Consolas, 'Lucida Console', monospace; letter-spacing: .05em; text-transform: uppercase; }
 .activity-log { max-height: 250px; overflow: auto; margin: 10px 0 0; padding: 10px; color: #b1c0aa; background: #080c09; border: 1px solid #334032; white-space: pre-wrap; overflow-wrap: anywhere; font: 9px/1.7 Consolas, 'Lucida Console', monospace; }
-.card-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 13px; padding-top: 9px; border-top: 1px solid #293629; color: var(--muted); font-size: 8px; }
+.card-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 13px; padding-top: 9px; border-top: 1px solid #293629; color: var(--muted); font: 8px Consolas, 'Lucida Console', monospace; }
 .repo-link { color: #a9c49a; text-decoration: none; }
 .empty-panel { position: relative; max-width: 720px; margin: 16px auto; padding: 21px 24px; text-align: center; border: 1px solid #52614e; background: repeating-linear-gradient(0deg, #0e150f, #0e150f 26px, #101811 27px); box-shadow: inset 0 0 30px #a0bc6710; }
 .empty-panel::before, .empty-panel::after { position: absolute; width: 8px; height: 8px; content: ''; border-color: var(--phosphor); border-style: solid; opacity: .7; }
 .empty-panel::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
 .empty-panel::after { right: -1px; bottom: -1px; border-width: 0 1px 1px 0; }
-.empty-panel h2 { margin: 0 0 8px; color: var(--phosphor-bright); font-size: 13px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+.empty-panel h2 { margin: 0 0 8px; color: var(--phosphor-bright); font: 500 13px 'Century Gothic', 'Segoe UI', Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
 .empty-panel p { margin: 0 auto 15px; max-width: 540px; color: #91a18f; font-size: 10px; line-height: 1.7; }
-.loading { padding: 45px 15px; color: #94a68d; text-align: center; font-size: 10px; letter-spacing: .05em; }
+.loading { padding: 45px 15px; color: #94a68d; text-align: center; font: 10px Consolas, 'Lucida Console', monospace; letter-spacing: .05em; }
 .pulse { display: inline-block; width: 7px; height: 7px; margin-right: 10px; background: var(--phosphor); box-shadow: 0 0 8px #b1db8c99; animation: pulse 1.3s infinite; }
 .notice { position: absolute; top: 85px; right: 24px; max-width: 360px; padding: 12px 16px; border: 1px solid #977044; color: #e6b974; background: #171109; font-size: 10px; }
 footer { display: flex; justify-content: space-between; gap: 15px; margin-top: auto; padding-top: 28px; color: #63715f; font-size: 8px; letter-spacing: .08em; }
 @keyframes pulse { 50% { opacity: .3; } }
 @keyframes cursor { to { visibility: hidden; } }
+@keyframes letter-arrival {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+  *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; }
 }
 @media (max-width: 760px) {
   #app { padding: 0 20px 20px; }
@@ -181,7 +200,7 @@ footer { display: flex; justify-content: space-between; gap: 15px; margin-top: a
   #account { gap: 9px; }
   .account-name { display: none; }
   .intro { display: block; padding: 32px 0 18px; }
-  h1 { font-size: 27px; }
+  .title-sequence { font-size: 22px; letter-spacing: .08em; }
   .lede { font-size: 10px; }
   .intro-readout { display: none; }
   .console { margin-top: 14px; }
