@@ -34,6 +34,30 @@ test('health endpoint reports setup without revealing credentials', async () => 
   assert.equal(JSON.stringify(body).includes(process.env.MUTHUR_PUBLISH_TOKEN), false);
 });
 
+test('health endpoint accepts a Vercel-linked Blob store ID without a read-write token', async () => {
+  const keys = ['GITHUB_CLIENT_ID', 'GITHUB_CLIENT_SECRET', 'SESSION_SECRET', 'OWNER_GITHUB', 'MUTHUR_PUBLISH_TOKEN', 'BLOB_READ_WRITE_TOKEN', 'BLOB_STORE_ID'];
+  const previous = new Map(keys.map((key) => [key, process.env[key]]));
+  Object.assign(process.env, {
+    GITHUB_CLIENT_ID: 'client',
+    GITHUB_CLIENT_SECRET: 'secret',
+    SESSION_SECRET: 's'.repeat(48),
+    OWNER_GITHUB: 'owner',
+    MUTHUR_PUBLISH_TOKEN: 'p'.repeat(48),
+    BLOB_STORE_ID: 'store-id',
+  });
+  delete process.env.BLOB_READ_WRITE_TOKEN;
+  try {
+    const body = await (await me(new Request('https://muthur.example/api/me'))).json();
+    assert.equal(body.configured, true);
+    assert.equal(body.missing.length, 0);
+  } finally {
+    for (const [key, value] of previous) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  }
+});
+
 test('GitHub sign-in checks OAuth state and restricts access to the configured owner', async () => {
   process.env.GITHUB_CLIENT_ID = 'client';
   process.env.GITHUB_CLIENT_SECRET = 'secret';

@@ -41,7 +41,7 @@ The local `.muthur/` files remain the source of truth. Publishing is explicit: a
 | `OWNER_GITHUB` | The one GitHub login allowed to view the dashboard |
 | `SESSION_SECRET` | Random session-signing secret, at least 32 characters |
 | `MUTHUR_PUBLISH_TOKEN` | Random secret used by the CLI to publish snapshots |
-| `BLOB_READ_WRITE_TOKEN` | Created by connecting a Vercel Blob store to the project |
+| `BLOB_STORE_ID` or `BLOB_READ_WRITE_TOKEN` | `BLOB_STORE_ID` is added when a Vercel Blob store is connected; the Blob SDK uses Vercel OIDC in hosted functions |
 
 Generate secrets locally (run separately for the session secret and publish token):
 
@@ -52,7 +52,7 @@ node -e "console.log(require('node:crypto').randomBytes(32).toString('base64url'
 ### Deploy setup
 
 1. Push this project to a GitHub repository and import it into Vercel. The included `vercel.json` builds the Vite dashboard and configures the static output directory.
-2. In Vercel Storage, create and connect a Blob store. Keep the token private; snapshots are written and read with private Blob access.
+2. In Vercel Storage, create and connect a Blob store. Vercel adds `BLOB_STORE_ID`; the Blob SDK authenticates from Vercel OIDC in hosted functions. If using a manually configured token instead, keep `BLOB_READ_WRITE_TOKEN` private.
 3. Create a GitHub OAuth App. Set its callback URL to `https://YOUR-VERCEL-DOMAIN/api/auth/callback`. The dashboard needs only the GitHub identity; it requests no repository scopes.
 4. Add the environment variables above to the Vercel project and redeploy. The dashboard allows only the exact account in `OWNER_GITHUB`.
 5. On each machine, set `MUTHUR_URL` to the deployed origin and `MUTHUR_PUBLISH_TOKEN` to the same publish token configured on Vercel. Then run `muthur publish` from an initialized repository.
