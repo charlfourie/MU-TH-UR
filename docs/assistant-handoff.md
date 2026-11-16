@@ -7,10 +7,20 @@ Use this instruction with GitHub Copilot, Claude, or another coding assistant in
 ```text
 MU/TH/UR handoff protocol
 
-At the start of a task, if this repository has `.muthur/state.md`, read it and the
-most recent relevant entries in `.muthur/activity.md`. Treat them as orientation,
-not as proof that the described code or plan is still current; inspect the code
-and follow the repository's own instructions.
+Before starting work, read Charl's shared Crew Guidelines at
+https://mu-th-ur.vercel.app/guidelines.html. They apply across repositories and
+assistants. If the page is unavailable, follow the human's latest direct
+instructions and ask when a decision depends on guidance you cannot verify.
+
+For Charl's MU/TH/UR workflow, the latest successfully published dashboard
+snapshot is the canonical handoff. The repository's `.muthur/` files are its
+portable working copy and publish payload. At the start of a task, check the
+latest dashboard snapshot when authenticated access is available, then read this
+repository's `.muthur/state.md` and relevant recent `.muthur/activity.md`
+entries. If the dashboard and local handoff disagree, reconcile the local files
+to the dashboard before making a new update. If the dashboard cannot be checked,
+ask the human for its current state instead of assuming the local copy is
+authoritative. Inspect the code and follow repository-specific instructions.
 
 When you complete a meaningful task or leave work in progress, maintain the
 handoff before finishing:
@@ -28,14 +38,18 @@ handoff before finishing:
 - If no `.muthur/` handoff exists, ask before initializing one.
 
 Never put credentials, tokens, private keys, or other sensitive material in
-handoff files. Do not publish a snapshot unless the user explicitly asks.
-Publishing is a separate action; never ask the user to paste a publish token
-into chat. Do not commit or push handoff changes unless the user asks.
+handoff files. After updating the local handoff, publish it and verify the
+dashboard shows the new snapshot before calling the handoff complete. Publishing
+is required for this workflow, not a separate optional action. If publish
+credentials are unavailable, ask the user to publish through a protected local
+prompt; never ask them to paste a publish token into chat. Do not commit or push
+handoff changes unless the user asks.
 ```
 
 ## Typical end-of-task commands
 
-Run these from the project repository after the CLI is installed:
+Run these from the project repository after the CLI is installed, then publish
+the updated snapshot:
 
 ```powershell
 muthur update --actor copilot --status active --summary "Implemented the import flow and verified it with the focused tests" --next "Review the import error states"

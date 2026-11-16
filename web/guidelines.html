@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#080c09" />
+    <meta name="description" content="Public operating guidelines for people and AI assistants collaborating through MU/TH/UR." />
+    <title>MU/TH/UR — Crew Guidelines</title>
+    <link rel="stylesheet" href="/demo.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="wordmark" href="/" aria-label="MU/TH/UR dashboard"><span class="mark" aria-hidden="true">M</span><span><strong>MU/TH/UR</strong><small>PROJECT COORDINATION SYSTEM</small></span></a>
+        <span class="public-label"><i aria-hidden="true"></i> PUBLIC CHARTER</span>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">SYS. 02 / SHARED OPERATING RULES</p>
+        <h1>Crew guidelines</h1>
+        <p class="lede">The working agreement for Charl and every assistant contributing to these projects. These rules are public and contain no private project handoff data.</p>
+      </section>
+
+      <section class="console" aria-labelledby="charter-title">
+        <div class="console-bar"><span><i class="lamp" aria-hidden="true"></i><span id="charter-title">THE COMMANDMENTS</span></span><span>READ BEFORE WORK</span></div>
+        <ol class="guidelines">
+          <li class="guideline">
+            <h2>01 / The human sets the mission</h2>
+            <p>Charl owns priorities and final decisions. Follow the latest direct instruction. Do not silently expand scope or make a consequential product decision on the human's behalf; ask when a real ambiguity blocks safe progress.</p>
+          </li>
+          <li class="guideline">
+            <h2>02 / The dashboard is the handoff authority</h2>
+            <p>The latest successfully published private-dashboard snapshot is canonical for project handoffs. Local <code>.muthur/</code> files are the portable working copy and publish payload. Check the dashboard before starting when authorized. If it conflicts with local state, reconcile before changing the handoff; if you cannot check it, ask Charl to confirm the current state.</p>
+          </li>
+          <li class="guideline">
+            <h2>03 / Verify the work, not just the notes</h2>
+            <p>Read the relevant handoff and inspect the current code, repository instructions, and working-tree changes. Treat notes as context, not proof. Never claim a change, test, publish, or deployment succeeded unless you verified it.</p>
+          </li>
+          <li class="guideline">
+            <h2>04 / Make focused, maintainable changes</h2>
+            <p>Fix the requested problem at its root, follow existing patterns, preserve unrelated work, and avoid unnecessary complexity. Do not overwrite or discard changes you did not make.</p>
+          </li>
+          <li class="guideline">
+            <h2>05 / Protect private data and credentials</h2>
+            <p>Never put tokens, passwords, private keys, or sensitive project details in chat, public pages, or handoff logs. Keep the public demo fictional and separate from private dashboard data. Use protected local prompts or secret managers for credentials.</p>
+          </li>
+          <li class="guideline">
+            <h2>06 / Test what changed and report honestly</h2>
+            <p>Run the smallest relevant validation after code changes. Report what passed, what failed, and what could not be checked. Do not hide errors or describe unverified work as complete.</p>
+          </li>
+          <li class="guideline">
+            <h2>07 / Leave a truthful handoff</h2>
+            <p>After meaningful work, update <code>.muthur/state.md</code> and <code>.muthur/activity.md</code> with the real status, concise summary, useful next step, validation, and truthful actor (<code>human</code>, <code>copilot</code>, or <code>claude</code>). Prefer the MU/TH/UR CLI; never invent activity.</p>
+          </li>
+          <li class="guideline">
+            <h2>08 / Publish and verify the handoff</h2>
+            <p>Publish each meaningful handoff update and confirm the new snapshot is visible on the private dashboard before calling the handoff complete. If credentials or access are unavailable, explain the blocker and give Charl a safe local way to publish. Never ask for a token in chat or claim a publish happened when it did not.</p>
+          </li>
+          <li class="guideline">
+            <h2>09 / Respect the repository's boundaries</h2>
+            <p>Do not commit, push, deploy, or perform destructive actions unless Charl asks. Publishing a handoff is a separate required workflow step; it does not authorize publishing code. Keep public portfolio links on the public demo, not the private dashboard.</p>
+          </li>
+          <li class="guideline">
+            <h2>10 / Work across assistants without assumptions</h2>
+            <p>These rules apply equally to Copilot, Claude, and other tools. Record who did the work, carry forward decisions and blockers, and choose a useful next step that does not depend on an unavailable assistant.</p>
+          </li>
+        </ol>
+        <p class="charter-note"><strong>RULE OF COMPLETION</strong> — The work is not fully handed off until the local record is updated, the dashboard snapshot is published and verified, and any remaining blockers are stated plainly.</p>
+      </section>
+
+      <footer class="page-footer"><a href="/demo.html">Public demo</a><span>OPEN ACCESS // NO PRIVATE PROJECT DATA</span><a href="https://github.com/charlfourie/MU-TH-UR">Source repository ↗</a></footer>
+    </main>
+  </body>
+</html>

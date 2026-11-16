@@ -38,11 +38,11 @@ Every write requires `--actor copilot`, `--actor claude`, or `--actor human`. At
 
 ## Assistant handoff protocol
 
-For a copyable instruction that tells assistants when to read and update handoffs, how to attribute work, and when not to publish, see [the assistant handoff protocol](docs/assistant-handoff.md). It is opt-in: copy it into a repository's assistant instructions if you want to use it there.
+The [public Crew Guidelines](https://mu-th-ur.vercel.app/guidelines.html) are the shared operating charter for Charl and all coding assistants. The same page is available locally at [`web/guidelines.html`](web/guidelines.html); [AGENTS.md](AGENTS.md) and [CLAUDE.md](CLAUDE.md) point repository-based assistants to it. The [assistant handoff protocol](docs/assistant-handoff.md) has the copyable MU/TH/UR CLI instructions.
 
 ## Private Vercel dashboard
 
-The local `.muthur/` files remain the source of truth. Publishing is explicit: after changing a project's state or activity, run `muthur publish` to update its private dashboard snapshot. Set these environment variables on the Vercel project:
+For Charl's workflow, the latest successfully published private-dashboard snapshot is the canonical handoff. Each repository's `.muthur/` Markdown is its portable working copy and publish payload; after updating it, publish and confirm success before treating the handoff as complete. If the dashboard and local files disagree, reconcile the local files to the dashboard before the next update. Publishing remains an explicit CLI operation (there is no background sync). Set these environment variables on the Vercel project:
 
 | Variable | Purpose |
 |---|---|
@@ -136,7 +136,7 @@ The `overview` output is a Markdown table suitable for terminals, issue comments
 
 ## MVP boundaries
 
-- No automatic sync: publishing is explicit and local commands still work offline.
+- No automatic background sync: handoffs work locally offline, and assistants publish explicitly at the end of meaningful work to keep the canonical dashboard current.
 - No centralized database or AI provider integration.
 - No modification of a repository's Git files; `.muthur/` is ordinary project content and can be committed with the repo.
 - The hosted dashboard is single-owner, not a multi-user collaboration service.

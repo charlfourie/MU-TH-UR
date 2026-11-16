@@ -43,3 +43,39 @@ Initialized project handoff.
 ## 2026-11-16T09:31:50.374Z — copilot
 
 - Updated the MU/TH/UR handoff after committing and pushing the assistant handoff protocol as a14b5ca.
+
+## 2026-11-16T09:34:14.162Z — copilot
+
+- Status: active → active
+- Updated current state summary.
+- Next: Try the dashboard-canonical handoff protocol with Claude.
+
+## 2026-11-16T09:34:19.221Z — copilot
+
+- Aligned the assistant handoff protocol and README with the user's instruction that the dashboard is canonical: local handoff changes must be published and confirmed before task completion.
+
+## 2026-11-16T09:34:54.709Z — copilot
+
+- Status: active → active
+- Updated current state summary.
+- Cleared next steps.
+- Next: Try the dashboard-canonical handoff protocol with Claude and refine it based on actual use.
+
+## 2026-11-16T09:34:54.811Z — copilot
+
+- Updated MU/TH/UR docs to make the latest published dashboard snapshot authoritative for this workflow; specified start-of-task reconciliation, required publish, and dashboard verification.
+
+## 2026-11-16T09:40:40.761Z — copilot
+
+- Status: active → active
+- Updated current state summary.
+- Cleared next steps.
+- Next: Deploy the public Crew Guidelines page and confirm it is reachable without sign-in.
+
+## 2026-11-16T09:40:40.886Z — copilot
+
+- Built the public Crew Guidelines page with shared workflow rules, assistant pointers, navigation links, and a regression test. npm test passed (13 tests); npm run typecheck passed. Deployment and canonical dashboard publication have not been verified.
+
+## 2026-11-16T09:41:01.245Z — copilot
+
+- Updated the copyable assistant handoff protocol to require reading the public Crew Guidelines across repositories and assistants.
