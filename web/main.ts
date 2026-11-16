@@ -95,23 +95,19 @@ function renderScorecard(projects: Project[]): HTMLElement {
   section.setAttribute('aria-labelledby', 'scorecard-title');
 
   const heading = element('div', 'scorecard-heading');
-  const title = element('h2', '', 'Recorded contributions');
+  const title = element('h2', '', 'Activity by contributor');
   title.id = 'scorecard-title';
   heading.append(
-    element('div', 'scorecard-eyebrow', 'CREW SCORECARD'),
     title,
-    element('p', '', 'Activity entries across published projects; self-reported, not a source-control diff.'),
+    element('p', '', 'Logged entries across published projects · not a source-control diff'),
   );
   section.append(heading);
 
   const list = element('ol', 'scorecard-list');
   for (const item of counts) {
-    const row = element('li', `scorecard-item${item.rank === 1 && item.count > 0 ? ' leading' : ''}`);
+    const row = element('li', 'scorecard-item');
     const identity = element('div', 'scorecard-identity');
-    identity.append(
-      element('span', 'scorecard-rank', String(item.rank).padStart(2, '0')),
-      element('h3', '', item.actor),
-    );
+    identity.append(element('h3', '', item.actor));
     const total = element('strong', 'scorecard-count', String(item.count));
     total.setAttribute('aria-label', `${item.count} activity ${item.count === 1 ? 'entry' : 'entries'}`);
     const progress = document.createElement('progress');

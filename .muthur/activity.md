@@ -100,3 +100,24 @@ Initialized project handoff.
 ## 2026-11-16T09:50:46.767Z — copilot
 
 - Added the activity-log scorecard and documented its limits: it counts one actor-stamped log entry, not source-control changes. All 16 tests and typecheck pass; browser check with mocked project snapshots rendered Copilot 2, Claude 1, Human 0.
+
+## 2026-11-16T09:53:38.351Z — copilot
+
+- Status: active → active
+- Updated current state summary.
+- Cleared next steps.
+- Next: Review the shared Crew Guidelines with Claude on Saturday.
+
+## 2026-11-16T09:53:38.463Z — copilot
+
+- Pushed 3b15b3c to main and verified the production dashboard HTML, scorecard JS, and styles are live. npm test (16 tests), npm run typecheck, and dashboard TypeScript checking passed.
+
+## 2026-11-16T09:58:34.607Z — copilot
+
+- Status: active → active
+- Updated current state summary.
+- Next: Deploy the quieter scorecard styling after review.
+
+## 2026-11-16T09:58:34.724Z — copilot
+
+- Softened scorecard presentation in response to user feedback; npm test (16 tests), npm run typecheck, and dashboard TypeScript checking pass. Not deployed; awaiting review.
