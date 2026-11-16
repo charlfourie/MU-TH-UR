@@ -1,0 +1,33 @@
+{
+  "name": "muthur",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local-first project handoff CLI for people and coding assistants.",
+  "type": "module",
+  "files": [
+    "build/cli",
+    "README.md"
+  ],
+  "bin": {
+    "muthur": "./build/cli/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.api.build.json && vite build",
+    "test": "npm run build && node --test",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.api.json"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1"
+  },
+  "overrides": {
+    "zod": "4.6.7"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
